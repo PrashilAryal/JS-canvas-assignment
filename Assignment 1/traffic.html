@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Traffic Light</title>
+  </head>
+  <body>
+    <canvas width="400" height="400" id="canvas"></canvas>
+  </body>
+  <script>
+    let canvas = document.getElementById("canvas"); // Paper
+    let context = canvas.getContext("2d"); // Pen
+
+    canvas.style.border = "1px solid black";
+
+    // Board
+    context.beginPath();
+    context.fillStyle = "black";
+    context.rect(0, 0, 240, 100);
+    context.fill();
+
+    // Red Light
+    context.beginPath();
+    context.fillStyle = "red";
+    context.arc(50, 50, 25, 0, 360);
+    context.fill();
+
+    // Orange Light
+    context.beginPath();
+    context.fillStyle = "orange";
+    context.arc(120, 50, 25, 0, 360);
+    context.fill();
+
+    // Green Light
+    context.beginPath();
+    context.fillStyle = "green";
+    context.arc(190, 50, 25, 0, 360);
+    context.fill();
+  </script>
+</html>
