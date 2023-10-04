@@ -1,0 +1,32 @@
+.container {
+  text-align: center;
+}
+
+.container__header {
+  color: navy;
+}
+
+.container__box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container__box__data {
+  margin-left: 20px;
+  border: 2px solid navy;
+  padding: 20px;
+}
+
+.keyboard__event {
+  background-color: navy;
+  color: white;
+  height: 80px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.keyboard__event {
+  font-size: 18px;
+  padding-top: 5px;
+}
