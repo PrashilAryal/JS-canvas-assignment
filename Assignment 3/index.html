@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game Loop</title>
+  </head>
+  <body>
+    <canvas id="canvas" width="400" height="400"></canvas>
+
+    <script>
+      const canvas = document.getElementById("canvas");
+      const c = canvas.getContext("2d");
+
+      canvas.style.backgroundColor = "navy";
+
+      canvas.addEventListener("mousedown", (event) => {
+        console.log("Clicked on ", event.offsetX, event.offsetY);
+        mouseClick(event.offsetX, event.offsetY);
+      });
+
+      function mouseClick(x, y) {
+        let a = 0;
+        let b = 0;
+        c.clearRect(0, 0, 400, 400);
+        console.log("X: ", x, "Y: ", y);
+        c.beginPath();
+        c.fillStyle = "yellow";
+        c.arc(x, y, 25, 0, 360);
+        c.fill();
+
+        if (y <= 400 - 25) {
+          a = x;
+          b = y + 1;
+        } else {
+          a = x;
+          b = y;
+        }
+
+        let stopAnimation = window.requestAnimationFrame(function () {
+          mouseClick(a, b);
+        });
+        if (b == y) {
+          cancelAnimationFrame(stopAnimation);
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -52,6 +52,7 @@
       context.arc(event.offsetX, event.offsetY, 10, 0, 360);
       context.fill();
 
+      console.log(event);
       clientX.innerHTML = "clientX: " + event.clientX;
       clientY.innerHTML = "clientY: " + event.clientY;
       offsetX.innerHTML = "offsetX: " + event.offsetX;
@@ -61,6 +62,7 @@
     let keyPress = document.getElementById("keyPress");
     document.addEventListener("keydown", (event) => {
       keyPress.innerHTML = "You Pressed: " + event.key;
+      console.log(event.key);
     });
   </script>
 </html>
